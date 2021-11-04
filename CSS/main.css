@@ -1,0 +1,49 @@
+
+.tituloCarrito{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.ventanaFloat{
+   position: absolute;
+   right: 0;
+   top: 80px; 
+   background-color: lightblue;
+   box-shadow: 0px 5px 5px grey;
+}
+.compras{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 50px;
+}
+.contador{
+    width: 10px;
+}
+.product{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+}   
+p{
+    margin: 0;
+}
+
+h5{
+    margin: 0;
+}
+
+img{
+    width: 170px;
+}
+
+.contenedores{
+    width: 170px;
+    height: 230px;
+    text-align: center;
+    margin-bottom: 50px;
+    box-shadow: 0px 5px 5px grey;
+}
