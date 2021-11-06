@@ -9,11 +9,13 @@ ventaEmergente.classList.add('ventanaFloat')
 // array de objetos
 const productos = [
 
-    {id: 1, img: 'images/netbook.jfif', descripcion: "Netbook Hp 16 ", precio: 8000},
-    {id: 2, img: 'images/smartv.jpg', descripcion: "Smartv 45 pg", precio: 45000},
-    {id: 3, img: 'images/ps4.png', descripcion: "Playstation 4", precio: 60000},
-    {id: 4, img: 'images/ps5.jpeg',descripcion: "Playstation 5", precio: 100000},
-    {id: 5, img: 'images/camara.gif',descripcion: "Camara Olimpus", precio: 25000}
+    {id: 1, img: '../images/netbook.jfif', descripcion: "Netbook Hp 16 ", precio: 8000},
+    {id: 2, img: '../images/smartv.jpg', descripcion: "Smartv 45 pg", precio: 45000},
+    {id: 3, img: '../images/ps4.png', descripcion: "Playstation 4", precio: 60000},
+    {id: 4, img: '../images/ps5.jpeg',descripcion: "Playstation 5", precio: 100000},
+    {id: 5, img: '../images/mouse.png',descripcion: "Mouse Gaming X-G200", precio: 1000},
+    {id: 6, img: '../images/impresoras.jfif',descripcion: "Impresora", precio: 19000},
+    {id: 7, img: '../images/nintendo.png',descripcion: "Nintendo Switch", precio: 70000}
 ];
 let i=1;   
 for (const producto of productos) {
