@@ -17,13 +17,18 @@
     width: 50px;
     height: 50px;
     position: absolute;
-    right: 50px;
+    right: 20px;
 }
 .compras:hover{
     cursor: pointer;
 }
 .contador{
-    width: 10px;
+    text-align: center;
+    width: 20px;
+    border-radius: 100%;
+    position: sticky;
+    color: white;
+    background-color: red;
 }
 .product{
     display: grid;
@@ -40,11 +45,10 @@ h5{
     margin: 0;
 }
 
-img{
-    width: 170px;
-}
-
 .contenedores{
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
     height: 300px;
     text-align: center;
     box-shadow: 0px 3px 10px grey;
