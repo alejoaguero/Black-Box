@@ -12,14 +12,14 @@ $(document).ready(function(){
     ]
 
     let i=0;
-    let precioTotal;
+    let precioTotal=0;
         for (const producto of productos) {
                
             $('#productos').append(`<div class="card contenedores">
                                         <img src="${producto.img}" class="card-img-top">
                                         <h5 class="card-title">${producto.descripcion}</h5>
                                         <p>${producto.precio}</p>
-                                        <button id="${producto.id}" class="captura">Agregar</button>
+                                        <button id="${producto.id}" class="captura btn btn-primary">Agregar</button>
                                     </div>`)
 
                         
@@ -30,9 +30,18 @@ $(document).ready(function(){
                                         
                                     precioTotal += producto.precio;
                                 }
+                                
+                                $('.pop__up').append(`<p>${producto.descripcion} / Precio: $${producto.precio}</p>`)
                                     
                         })
-                    }              
+                    }
 
-            
-});
+                    
+                            $('#carro').click(function ventaEmergente(){
+
+                                $('.pop__up').addClass('ventanaCarrito')
+
+                            })
+
+
+            })
