@@ -10,11 +10,15 @@ $(document).ready(function(){
             {id: 7, img: 'Images/nintendo.png',descripcion: "Nintendo Switch", precio: 70000}
 
     ]
-
-    let i=0;
+    let productosCarrito = [];
     let precioTotal=0;
         for (const producto of productos) {
-               
+            let i;    
+                if(localStorage.getItem('cantidad') == i){
+                    i=0
+                     }
+                        else
+                            i = localStorage.getItem('cantidad')       
             $('#productos').append(`<div class="card contenedores">
                                         <img src="${producto.img}" class="card-img-top">
                                         <h5 class="card-title">${producto.descripcion}</h5>
@@ -23,25 +27,23 @@ $(document).ready(function(){
                                     </div>`)
 
                         
-                        $(`#${producto.id}`).click( function capturarProdu(e) {     
-                            if(e.target){
-                                i++;
-                                $('#cont').text(i);
+                        $(`#${producto.id}`).click( function capturarProdu(e){ 
+                            $('#carro').hide(500)
+                                        .show(500)
                                         
-                                    precioTotal += producto.precio;
-                                }
-                                
-                                $('.pop__up').append(`<p>${producto.descripcion} / Precio: $${producto.precio}</p>`)
-                                    
+                                        if(e.target){
+                                            i++;
+                                            $('#cont').text(i);
+                                                precioTotal += producto.precio;
+                                                    productosCarrito.push(`<p>${producto.descripcion} / Precio: $${producto.precio}</p>`)
+                                                    JSON.stringfy(productosCarrito)
+                                        }                 
                         })
-                    }
-
-                    
+                                
                             $('#carro').click(function ventaEmergente(){
-
                                 $('.pop__up').addClass('ventanaCarrito')
-
                             })
 
+                    }
 
             })
