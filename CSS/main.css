@@ -1,10 +1,11 @@
-
+.cajaPadre{
+    background-color: #2C3E50 ;
+}
 .tituloCarrito{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 8px grey;
-    margin-bottom: 40px;
+    box-shadow: 0px 4px 8px grey;   
 }
 .ventanaFloat{
    position: absolute;
@@ -44,8 +45,13 @@ p{
 h5{
     margin: 0;
 }
+.bordes{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black  ;
+}
 
 .contenedores{
+    margin-top: 10px;
     display: grid !important;  
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -53,21 +59,21 @@ h5{
     width: 12rem;
     height: 300px;
     text-align: center;
-    box-shadow: 0px 3px 10px grey;
+    box-shadow: 0px 3px 10px black;
     margin-bottom: 20px;
 }
 .pop__up{
     display: none;
 }
-.ventanaCarrito{
+.pop__up{
     display: block;
     background-color: rgb(180,180,180,0.8);
     border-radius: 20px;
     margin-top: 30px;
+    padding-top: 10px;
     color: white;
     position: absolute;
     width: 300px;
-    height: 300px;
     top: 0;
     right: 39%;
     filter: blur(0px);
