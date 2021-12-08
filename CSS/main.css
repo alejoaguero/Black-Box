@@ -1,80 +1,55 @@
-.cajaPadre{
-    background-color: #2C3E50 ;
+*{
+    margin: 0;
+    padding: 0;
 }
-.tituloCarrito{
+.padre{
+    background-color: #2C3E50;
+    width: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 4px 8px grey;   
+    justify-content: center;
+    align-items: center;    
 }
-.ventanaFloat{
-   position: absolute;
-   right: 0;
-   top: 80px; 
-   background-color: lightblue;
-   box-shadow: 0px 5px 5px grey;
-}
-.compras{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    right: 12px;
-}
-.compras:hover{
-    cursor: pointer;
-}
-.contador{
+.tituloIngreso{
     text-align: center;
-    width: 20px;
-    border-radius: 100%;
-    position: sticky;
-    color: white;
-    background-color: red;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-weight: 700;
 }
-.product{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    justify-items: center;
-    grid-row-gap: 20px;
-}   
-p{
-    margin: 0;
+.subTexto{
+    font-family: 'Sawarabi Gothic', sans-serif;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
-
-h5{
-    margin: 0;
-}
-.bordes{
-    border-top: 1px solid black;
-    border-bottom: 1px solid black  ;
-}
-
-.contenedores{
-    margin-top: 10px;
-    display: grid !important;  
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+.ingresoDatos{
+    border-radius: 10px;    
+    border: 1px solid black;
+    padding: 40px 20px;
+    background-color: white;
+    display: flex;
     flex-direction: column;
-    width: 12rem;
-    height: 300px;
+}
+.ingresos{
+    margin-top: 10px;
+}
+.suscribe{
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 40px 20px;
+    background-color: white;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.titulo__suscribe{
+    font-family: 'Sawarabi Gothic', sans-serif;
     text-align: center;
-    box-shadow: 0px 3px 10px black;
-    margin-bottom: 20px;
+    grid-column: 1/4;
+    font-weight: 500;
 }
-.pop__up{
-    display: none;
+.label__suscribe{
+    font-family: 'Sawarabi Gothic', sans-serif;
+    margin-top: 10px;
 }
-.pop__up{
-    display: block;
-    background-color: rgb(180,180,180,0.8);
-    border-radius: 20px;
-    margin-top: 30px;
-    padding-top: 10px;
-    color: white;
-    position: absolute;
-    width: 300px;
-    top: 0;
-    right: 39%;
-    filter: blur(0px);
+.nombre__suscribe{
+    grid-column: 1/2;
 }
