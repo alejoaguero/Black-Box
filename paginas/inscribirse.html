@@ -13,29 +13,31 @@
 </head>
 <body>
     <div class="padre">
-        <form class="suscribe container w-auto h-auto" method="get">
-                    <h2 class="titulo__suscribe">Registrate y crea tu nuevo usuario</h2>
-                    <hr>    
-                    <label for="GET-name" class="label__suscribe">Nombre</label>
-                    <input type="text" class="form-control  nombre__suscribe" name="nombre" id="GET-name">
-                    <div id="nameError"></div>
-                    <label for="GET-apellido" class="label__suscribe">Apellido</label>
-                    <input type="text"  class="form-control apellido__suscribe" name="apellido" id="GET-apellido">
-                    <div id="lastnameError"></div>
-                    <label for="GET-mail" class="label__suscribe">Email</label>
-                    <input type="email" class="form-control mail__suscribe" name="email2" id="GET-mail">
-                    <div id="alertSubMAil"></div>
-                    <label for="GET-pass" class="label__suscribe">Contraseña</label>
-                    <input type="password" class="form-control pass__suscribe" name="contraseña2" id="GET-pass">
-                    <div id="alertSubPass"></div>
-                    <label for="GET-repeatPass" class="label__suscribe">Repetir Contraseña</label>
-                    <input type="password" class="form-control passRepeat__suscribe" name="contraseñaRep" id="GET-repeatPass">
-                    <div id="alertSubRepeat"></div>
-                    <button type="click" class="btn btn-primary form-control label__suscribe" id="botonSub">Enviar</button>  
-        </form>
+        <div class="aparecer">
+            <form class="suscribe container w-auto h-auto" method="get">
+                        <h2 class="titulo__suscribe">Registrate y crea tu nuevo usuario</h2>
+                        <hr>    
+                        <label for="GET-name" class="label__suscribe">Nombre</label>
+                        <input type="text" class="form-control  nombre__suscribe" name="nombre" id="GET-name">
+                        <div id="nameError"></div>
+                        <label for="GET-apellido" class="label__suscribe">Apellido</label>
+                        <input type="text"  class="form-control apellido__suscribe" name="apellido" id="GET-apellido">
+                        <div id="lastnameError"></div>
+                        <label for="GET-mail" class="label__suscribe">Email</label>
+                        <input type="email" class="form-control mail__suscribe" name="email2" id="GET-mail">
+                        <div id="alertSubMAil"></div>
+                        <label for="GET-pass" class="label__suscribe">Contraseña</label>
+                        <input type="password" class="form-control pass__suscribe" name="contraseña2" id="GET-pass">
+                        <div id="alertSubPass"></div>
+                        <label for="GET-repeatPass" class="label__suscribe">Repetir Contraseña</label>
+                        <input type="password" class="form-control passRepeat__suscribe" name="contraseñaRep" id="GET-repeatPass">
+                        <div id="alertSubRepeat"></div>
+                        <a class="btn btn-primary form-control label__suscribe" id="botonSub">Enviar</a>
+            </form>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="../JS/inscribirse.js"></script>
+    <script src="../JS/inscribirse.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>

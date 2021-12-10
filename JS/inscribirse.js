@@ -1,8 +1,13 @@
-let valEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
-let valName = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/i
+const valEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+const valName = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/i
+const valNumb =  /^[0-9]+$/i 
+
+import {Usuarios} from './Usuarios.js'
 
 $(document).ready(function(){
-let usuarios = []
+let cuentas = []
+let i=0;
+// Funcion para validacion de campos de la suscripcion
 let suscripcion = (e) =>{
         switch(e.target.name){
             case "nombre":
@@ -54,32 +59,53 @@ let suscripcion = (e) =>{
             default: console.log('EXITO!!!')
         }
 }
-        
-        $('input').keyup((e)=>{
-
+    //Llamada a la funcion de validacion en los inputs               
+            $('input').keyup((e)=>{
                 suscripcion(e)
                 $('.padre').css('height','100%')
-        })
-
-                $('#botonSub').click((e) =>{
-
-                    e.preventDefault()
-
-                    let nomb = $('#GET-name').value
-                    let apell = $('#GET-apellido').value
-                    let mail = $('#GET-mail').value
-                    let pass = $('#GET-pass').value
-                                        
-                                usuarios.push({
-                                            nombre: nomb,
-                                            apellido:apell,
-                                            email: mail,
-                                            contraseña: pass
-                                        })
-                    
-                        console.log(usuarios)
                 })
 
+            
+            $('input').blur((e)=>{
+                suscripcion(e)
+                $('.padre').css('height','100%')
+                })
 
-        
+    //Datos de los inputs 
+            $('#botonSub').click((e) =>{
+                e.preventDefault()
+                    $('.aparecer').css('height','100%')                
+                        let nomb = document.querySelector('#GET-name').value
+                        let apell = document.querySelector('#GET-apellido').value
+                        let mail = document.querySelector('#GET-mail').value
+                        let pass = document.querySelector('#GET-pass').value
+
+
+                                //Validando datos al hacer click en el boton enviar y pushea los datos en un array 
+                                             if( isNaN(nomb) == false || isNaN(apell) == false || valEmail.test(mail) == false || valNumb.test(pass) == false){
+                                                    console.log(isNaN(nomb))
+                                                    console.log(isNaN(apell))
+                                                    console.log( valEmail.test(mail))
+                                                    console.log(valNumb.test(pass))
+                                                    console.log('no funciono')
+                                                       }
+                                                    else{
+                                                        i++
+                                                        let users = new Usuarios(nomb,apell,mail,pass,i)
+                                                            cuentas.push(users)
+                                                            let h = {}
+
+                                                            cuentas = cuentas.filter(o => h[o.email] ? false : h[o.email] = true)
+                                        
+                                                                            localStorage.setItem('usuario',JSON.stringify(cuentas))
+                                                                                                    let volver = document.querySelector('#botonSub')
+
+                                                                                                    volver.setAttribute("href","./index.html")
+                                                            }
+                                                                
+            })
+        $('.aparecer').hide()
+        setTimeout(()=>{
+                    $(".aparecer").slideDown(1000) 
+            },1000  )              
 })

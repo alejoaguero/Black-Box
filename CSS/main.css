@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style-type: none;
 }
 .padre{
     background-color: #2C3E50;
@@ -32,10 +34,13 @@
 .ingresos{
     margin-top: 10px;
 }
+.aparecer{
+    height: 100vh;
+}
 .suscribe{
     border-radius: 10px;
     border: 1px solid black;
-    padding: 40px 20px;
+    padding: 20px 20px;
     background-color: white;
     margin-bottom: 50px;
     margin-top: 50px;
@@ -52,4 +57,15 @@
 }
 .nombre__suscribe{
     grid-column: 1/2;
+}
+#botonSub{
+    color: white;
+}
+#botonIngresar{
+    color: white;
+}
+
+.desaparecer{
+    position: absolute !important;
+    top: 100px;
 }
