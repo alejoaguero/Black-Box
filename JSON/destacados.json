@@ -1,0 +1,26 @@
+[
+    {
+        "id" : "1",
+        "nombre":  "Bloodborne",
+        "precio": 5000,
+        "imagen": "./images/bloodborne.jpg"
+    },
+    {
+        "id":"2",
+        "nombre":  "Ghost of Tsushima",
+        "precio": 20000,
+        "imagen": "./images/ghostt.jpg"
+    },
+    {
+        "id":"3",
+        "nombre":  "God of War 4",   
+        "precio": 4600,
+        "imagen": "./images/godofwar4.png"  
+    },
+    {
+        "id":"4",
+        "nombre":  "Spider Man Miles",
+        "precio": 21000,
+        "imagen": "./images/spidermanmiles.jpg"
+    }
+]

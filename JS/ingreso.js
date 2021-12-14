@@ -18,7 +18,7 @@ $(document).ready(function(){
                                                 $('.passSesion').remove()
                                                         let inicio = document.querySelector('#botonIngresar')
 
-                                                                inicio.setAttribute("href","./paginas/servicios.html")
+                                                                inicio.setAttribute("href","../index.html")
                                         }
 
                         });
