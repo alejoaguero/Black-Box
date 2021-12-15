@@ -1,7 +1,7 @@
 $(document).ready(function(){
     let inicio = localStorage.getItem('cant');
     let carroCant = document.querySelector('#contCarro').textContent = localStorage.getItem('cant')
-        fetch("./JSON/destacados.json")
+        fetch("../JSON/destacados.json")
             .then(data => data.json())
             .then(data =>{ 
                 data.forEach(element => {
