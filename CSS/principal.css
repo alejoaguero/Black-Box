@@ -25,7 +25,7 @@ a{
 }
 a:hover{
     text-decoration: none;
-    color: white;
+    color: grey;
 }
 .navBar{
     display: flex;
@@ -61,6 +61,9 @@ a:hover{
 .comprasCarro{
     height: 35px;
     margin-right: 30px;
+}
+.comprasCarro:hover{
+    cursor: pointer;
 }
 .contadorCarr{
     font-weight: 600;
@@ -128,7 +131,8 @@ a:hover{
 }
 .nameDestac{
     text-align: center;
-    font-weight: 500;
+    font-weight: 800;
+    font-family: 'Oswald', sans-serif;
 }
 .cantComprado::-webkit-outer-spin-button, .cantComprado::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -149,9 +153,10 @@ a:hover{
     position: fixed;
     width: 350px;
     height: 100%;
-    top: 0;
-    right: 0;
     background-color: white;
+    transition: all 1000ms linear;
+    right: 0;
+    top: 0;
 }
 .tituloCerrar{
     display: flex;
@@ -189,4 +194,38 @@ hr{
 }
 .precioCarrito{
     grid-column: 2/4;
+}
+
+/*Pie de pagina*/
+.backColor{
+    background-color: white;
+    margin: 0;
+}
+.titFooter{
+    color: #DB0000;
+    font-size: 70px;
+    margin-left: 20px;
+    letter-spacing: -6px;
+}
+.iconsFooter{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.flexFoot{
+    display: flex;
+    margin-left: 20px;    
+    align-items: center;
+}
+.datosEmpre{
+    opacity: 0.6;
+}
+.infoProdu{
+    margin-left: 20px;
+    opacity: 0.6;
+}
+.marginInfo{
+    margin-top: 40px;
 }

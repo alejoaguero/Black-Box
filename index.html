@@ -16,10 +16,10 @@
     <header class="navPadre">
         <div class="navBar">
             <div>
-                    <nav class="flexin listProd">
-                        <li>Videojuegos</li>
-                        <li>Eléctronica</li>
-                        <li>Merchandising</li>
+                    <nav class="flexin listProd abrirCarro">
+                        <li><a href="#">Videojuegos</a></li>
+                        <li><a href="#">Eléctronica</a></li>
+                        <li><a href="#">Merchandising</a></li>
                     </nav>
                 </div>
                 <h1 class="navTitulo">Black-Box</h1>
@@ -63,15 +63,31 @@
     <aside class="menuCarrito">
         <div class="tituloCerrar">
             <h4 class="tituloCarrito">CARRITO DE COMPRAS</h4>
-            <a href="#">X CERRAR</a>
+            <a href="#" id="cerrarCarro">X CERRAR</a>
         </div>
         <hr>
+        <div id="productosCarro"></div>
     </aside>
-    <footer>
+    <footer class="backColor">
         <div>
+            <h5 class="navTitulo titFooter">Black-Box</h5>
+            <div class="flexFoot">
+                <img src="./Images/localizacion.png" alt="local" class="iconsFooter">
+                <p class="datosEmpre">Rafael Castillo,Buenos Aires,Argentina</p>
+            </div>
+            <div class="flexFoot">
+                <img src="./Images/telefono-inteligente.png" alt="cel" class="iconsFooter">
+                <p class="datosEmpre">Telefono: 011-3594-5047</p>
+            </div>
+            <div class="flexFoot">
+                <img src="./Images/email.png" alt="mail" class="iconsFooter">
+                <p class="datosEmpre">Email: alejoleonel45@gmail.com</p>   
+            </div>
+            <p class="infoProdu marginInfo">Los precios expresados no incluyen IVA y estan sujetos a cambio si previo aviso.Las fotos son a<p>
+            <p class="infoProdu">modo ilustrativo. La venta de cualquiera de los productos publicados esta sujeta a la verificación<p> 
+            <p class="infoProdu"> de stock. Las especificaciones técnicas y descripciones estan sujetas a cambios sin previaviso.</p>
         </div>
-        <div>
-        </div>
+        <br>  
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
