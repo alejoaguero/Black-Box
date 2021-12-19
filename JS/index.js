@@ -1,8 +1,13 @@
+let carro = []
+const productosCarro = document.querySelector('#productosCarro')
+const botonVaciar = document.querySelector('.vaciarCarro')
+const totalPagar = document.querySelector('.totalPagar')
+
 $(document).ready(function(){
-    let carro = {}
-    
-    let inicio = localStorage.getItem('cant');
+    //let inicio = localStorage.getItem('cant');
     let carroCant = document.querySelector('#contCarro').textContent = localStorage.getItem('cant')
+
+    //Pintando productos destacados
         fetch("../JSON/destacados.json")
             .then(data => data.json())
             .then(data =>{ 
@@ -15,12 +20,11 @@ $(document).ready(function(){
                                                     <button id="${element.id}" class="addCarrito">AGREGAR</button> 
                                                 </div>                        
                         `)
+                        
+                        //Agregando productos al carrito
                             $(`#${element.id}`).click((e)=>{
                                 if(e.target){
-                                    let cons = ++inicio
-                                            localStorage.setItem('cant',cons)
-
-                                                let carroCant = document.querySelector('#contCarro').textContent = cons
+                                    let carroCant = document.querySelector('#contCarro').textContent 
 
                                                     const producto = {
                                                         id: element.id,
@@ -29,54 +33,19 @@ $(document).ready(function(){
                                                         imagen: element.imagen,
                                                         cantidad: 1
                                                     }
-                                                            if(carro.hasOwnProperty(producto.id)){
-                                                                producto.cantidad  = carro[producto.id].cantidad + 1
-                                                            }                   
-                                                
-                                                                carro[producto.id] = {...producto}
+                                                        carro.push(producto)
 
-                                                                const productosCarro = document.querySelector('#productosCarro')
-                                                                productosCarro.innerHTML = " "
+                                                                    carritoVer()
 
+                                                                    vaciarCarro()
 
-                                                                    Object.values(carro).forEach((element)=>{
-                                                                                 let   produ   =  `<div class="cajaCarrito" id="${element.id}">
-                                                                                                        <img src="${element.imagen}" class="imgCarrito">
-                                                                                                        <p>${element.nombre}</p>
-                                                                                                        <h5 class="text-danger precioCarrito">$${element.precio}</h5>
-                                                                                                        <p>${element.cantidad}</p>
-                                                                                                    </div>
-                                                                                                    <hr>
-                                                                                                    `
-                                                                                          $('#productosCarro').append(produ)
+                                                                        totalPagar.textContent = element.precio
 
-                                                                                        localStorage.setItem('items',JSON.stringify(carro))
-                                                                    })  
                                     }
-                                    else{
-                                        console.log('no funciona')
-                                    }                                        
+                                            else{
+                                                console.log('no funciona')
+                                            }
                             })
-
-                                if(localStorage.getItem('items')){
-                                    carro = JSON.parse(localStorage.getItem('items'))
-                                    
-                                    productosCarro.innerHTML = " "
-
-                                    Object.values(carro).forEach((element)=>{
-                                        let   produ   =  `<div class="cajaCarrito" id="${element.id}">
-                                                               <img src="${element.imagen}" class="imgCarrito">
-                                                               <p>${element.nombre}</p>
-                                                               <h5 class="text-danger precioCarrito">$${element.precio}</h5>
-                                                               <p>${element.cantidad}</p>
-                                                           </div>
-                                                           <hr>
-                                                           `
-
-                                                           $('#productosCarro').append(produ)
-                                            })
-                            
-                                }
                 });
             })
 
@@ -89,9 +58,52 @@ $(document).ready(function(){
 
                 $('.comprasCarro').click(()=>{
                     $('.menuCarrito').css("display","block")
-                })
-
-                    $('#cerrarCarro').click(()=>{
-                        $('.menuCarrito').css("display","none")
                     })
-})
+
+                        $('#cerrarCarro').click(()=>{
+                            $('.menuCarrito').css("display","none")
+                        })
+
+                                                //Quedan guardados localmente en la pagina
+                                                if(localStorage.getItem('items')){
+
+                                                    carro = JSON.parse(localStorage.getItem('items'))
+                
+                                                            carritoVer()
+                                                            vaciarCarro()
+
+                                                                
+                                                }
+    })
+
+    
+    // Pintando productos en el carro (funcion)
+const carritoVer = () =>{
+    productosCarro.innerHTML = " "
+    carro.forEach((element,indice)=>{
+
+        let   produ   =  `<div class="cajaCarrito">
+                               <img src="${element.imagen}" class="imgCarrito">
+                               <p>${element.nombre}</p>
+                               <h5 class="text-danger precioCarrito">$${element.precio*element.cantidad} x <span class="text-primary cantiCarro">${element.cantidad}</span></h5>
+                               <button class="btn btn-primary masProdu" id="${indice}">+</button>    
+                           </div>
+                           <hr>
+                           ` 
+
+                 $('#productosCarro').append(produ)
+
+                 localStorage.setItem('items',JSON.stringify(carro))    
+
+})  
+}
+
+const vaciarCarro = () =>{
+    botonVaciar.addEventListener('click',() => {
+        carro = []
+        productosCarro.innerHTML = " "
+
+            localStorage.removeItem('items')
+    })
+}
+

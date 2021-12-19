@@ -194,8 +194,28 @@ hr{
 }
 .precioCarrito{
     grid-column: 2/4;
+    grid-row: 2/5;
 }
-
+.sacarProdu{
+    font-size: 10px;
+    text-align: center;
+    grid-column: 2/2; 
+    grid-row: 2/5;
+    width: 30px;
+    height: 30px;
+    margin-left: 110px;
+    right: 0;
+}
+.totalCarro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.vaciarCarro{
+    margin-left: 200px;
+}
 /*Pie de pagina*/
 .backColor{
     background-color: white;
