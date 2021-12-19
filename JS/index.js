@@ -1,8 +1,8 @@
 let carro = []
 const productosCarro = document.querySelector('#productosCarro')
 const botonVaciar = document.querySelector('.vaciarCarro')
-const totalPagar = document.querySelector('.totalPagar')
-
+const totalPagar = document.querySelector('.totalPagar')     
+let cont = localStorage.getItem('cant')
 $(document).ready(function(){
     //let inicio = localStorage.getItem('cant');
     let carroCant = document.querySelector('#contCarro').textContent = localStorage.getItem('cant')
@@ -24,7 +24,12 @@ $(document).ready(function(){
                         //Agregando productos al carrito
                             $(`#${element.id}`).click((e)=>{
                                 if(e.target){
-                                    let carroCant = document.querySelector('#contCarro').textContent 
+                                    //cantidad de productos agregados
+                                    cont++
+
+                                    localStorage.setItem('cant', cont)
+
+                                                carroCant = document.querySelector('#contCarro').textContent = cont
 
                                                     const producto = {
                                                         id: element.id,
@@ -34,13 +39,12 @@ $(document).ready(function(){
                                                         cantidad: 1
                                                     }
                                                         carro.push(producto)
-
+                                                                    
                                                                     carritoVer()
-
-                                                                    vaciarCarro()
-
-                                                                        totalPagar.textContent = element.precio
-
+                                                                    vaciarCarro()   
+                                                                    totalCarro()
+                                                                
+                                                                
                                     }
                                             else{
                                                 console.log('no funciona')
@@ -71,9 +75,14 @@ $(document).ready(function(){
                 
                                                             carritoVer()
                                                             vaciarCarro()
-
+                                                            totalCarro()
                                                                 
                                                 }
+
+            botonVaciar.addEventListener('click', () =>{
+                cont = 0
+                carroCant = document.querySelector('#contCarro').textContent = " "
+            })
     })
 
     
@@ -98,12 +107,26 @@ const carritoVer = () =>{
 })  
 }
 
+//funcion para vaciar el carro
+
 const vaciarCarro = () =>{
     botonVaciar.addEventListener('click',() => {
         carro = []
         productosCarro.innerHTML = " "
 
             localStorage.removeItem('items')
+            localStorage.removeItem('cant')
     })
 }
 
+//Calcular el el total de productos agregados y a la vez lo elimina al hacer boton vaciar
+
+const totalCarro = () =>{
+    const total = carro.map(element => element.precio).reduce((prev,curr) => prev + curr,0)
+
+        totalPagar.textContent = total
+
+        botonVaciar.addEventListener('click',()=>{
+            totalPagar.textContent = " "
+        })
+}   
