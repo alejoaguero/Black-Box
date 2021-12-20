@@ -220,6 +220,9 @@ hr{
 .backColor{
     background-color: white;
     margin: 0;
+    display: flex;
+    flex-direction: row;
+    padding: 30px 0px;  
 }
 .titFooter{
     color: #DB0000;
@@ -243,9 +246,18 @@ hr{
     opacity: 0.6;
 }
 .infoProdu{
-    margin-left: 20px;
+    margin-left: 30px;
+    margin-right: 20px;
     opacity: 0.6;
 }
 .marginInfo{
     margin-top: 40px;
+}
+.cajaDatos{
+    border-right: 2px solid #DB0000;
+}
+
+/*Modal*/
+.textCenter{
+    text-align: center;
 }

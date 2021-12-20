@@ -13,7 +13,7 @@ let suscripcion = (e) =>{
             case "nombre":
                         if(!isNaN(e.target.value)){
                             $('.errorName').remove()
-                            $('#nameError').append(`<p class="text-danger errorName">Ingrese solo letras</p>`)
+                            $('#nameError').append(`<p class="text-warnign errorName">Ingrese solo letras</p>`)
                         }
                             else{
                                 $('.errorName').remove()
@@ -22,7 +22,7 @@ let suscripcion = (e) =>{
             case "apellido":
                             if(!isNaN(e.target.value)){
                                 $('.lastError').remove()
-                                $('#lastnameError').append(`<p class="text-danger lastError">Ingrese solo letras</p>`)
+                                $('#lastnameError').append(`<p class="text-warnign lastError">Ingrese solo letras</p>`)
                             }
                                 else{
                                     $('.lastError').remove()
@@ -31,7 +31,7 @@ let suscripcion = (e) =>{
             case "email2": 
                             if(!valEmail.test(e.target.value)){
                                 $('.submailError').remove()
-                                $('#alertSubMAil').append(`<p class="text-danger submailError">Ingreso un formato de mail erroneo</p>`)
+                                $('#alertSubMAil').append(`<p class="text-warnign submailError">Ingreso un formato de mail erroneo</p>`)
                             }
                                 else{
                                     $('.submailError').remove()
@@ -40,7 +40,7 @@ let suscripcion = (e) =>{
             case "contraseña2":
                                 if(isNaN(e.target.value)){
                                     $('.subpassError').remove()
-                                    $('#alertSubPass').append(`<p class="text-danger subpassError">Ingrese una contraseña de solo números</p>`)
+                                    $('#alertSubPass').append(`<p class="text-warnign subpassError">Ingrese una contraseña de solo números</p>`)
                                 }
                                     else{
                                         $('.subpassError').remove()
@@ -50,7 +50,7 @@ let suscripcion = (e) =>{
                 let password = document.querySelector('#GET-pass').value
                                     if(e.target.value !== password){
                                             $('.repeatError').remove()
-                                            $('#alertSubRepeat').append(`<p class="text-danger repeatError">Ingrese una contraseña de solo números</p>`)
+                                            $('#alertSubRepeat').append(`<p class="text-warnign repeatError">Ingrese una contraseña de solo números</p>`)
                                     }
                                             else{
                                                 $('.repeatError').remove()

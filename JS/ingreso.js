@@ -9,9 +9,9 @@ $(document).ready(function(){
                         cuentas.forEach(element => {
                                 if(emailIngreso !== element.email || passIngreso !== element.pass){
                                         $('.mailSesion').remove()
-                                        $('#errorMail').append(`<p class="text-danger mailSesion">Ingreso un mail no valido</p>`)
+                                        $('#errorMail').append(`<p class="text-warning mailSesion">Ingreso un mail no valido</p>`)
                                         $('.passSesion').remove()
-                                        $('#errorPass').append(`<p class="text-danger passSesion">Ingreso una contraseña no valida</p>`)
+                                        $('#errorPass').append(`<p class="text-warning passSesion">Ingreso una contraseña no valida</p>`)
                                 }
                                         else{
                                                 $('.mailSesion').remove()
