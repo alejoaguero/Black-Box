@@ -8,7 +8,7 @@ $(document).ready(function(){
     let carroCant = document.querySelector('#contCarro').textContent = localStorage.getItem('cant')
 
     //Pintando productos destacados
-        fetch(" http://localhost:3333/destacados")
+        fetch("https://my-json-server.typicode.com/alejoaguero/destacados/destacados")
             .then(data => data.json())
             .then(data =>{ 
                 data.forEach(element => {
