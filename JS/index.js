@@ -8,7 +8,7 @@ $(document).ready(function(){
     let carroCant = document.querySelector('#contCarro').textContent = localStorage.getItem('cant')
 
     //Pintando productos destacados
-        fetch("../JSON/destacados.json")
+        fetch(" http://localhost:3333/destacados")
             .then(data => data.json())
             .then(data =>{ 
                 data.forEach(element => {
